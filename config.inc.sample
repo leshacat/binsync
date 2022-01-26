@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+export vHOST=MyIPAddress
+export vPORT=MyPortNumber
+export vUSER=MyRPCUsername
+export vPASS=MyRPCPassword
+
+export vWALLETPASS=MyWalletPassword
+
+export vTOADDR=SendToAddress
+
+export vMINXFER=15
+
+export vCOMMENT="To INodez Onboarding (CRON)"
