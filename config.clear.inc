@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-export vHOST=MyIPAddress
-export vPORT=MyPortNumber
+export vHOST=127.0.0.1
+export vPORT=42069
 export vUSER=MyRPCUsername
 export vPASS=MyRPCPassword
 
