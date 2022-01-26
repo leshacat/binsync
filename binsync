@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+vHOST=MyIPAddress
+vPORT=MyPortNumber
+vUSER=MyRPCUsername
+vPASS=MyRPCPassword
+
+vWALLETPASS=MyWalletPassword
+
+vTOADDR=SendToAddress
+
+vMINXFER=15
+
+vCOMMENT="To INodez Onboarding (CRON)"
+
+# STOP CONFIGURING
+
+timestamp() {
+  echo -n "[$(date +"%Y-%m-%d %H-%M-%S")] "
+}
+
+vBALANCE=$(raptoreum-cli -rpcconnect=${vHOST} -rpcport=${vPORT} -rpcuser=${vUSER} -rpcpassword=${vPASS} getbalance)
+
+#echo "[${vBALANCE}][${vMINXFER}]"
+
+if (( $(echo "$vBALANCE >= $vMINXFER" |bc -l) ))
+then
+  timestamp ; echo "Balance: ${vBALANCE} >= ${vMINXFER}... Probably should send ${vBALANCE} RTMs to INodez!"
+  timestamp ; echo "Unlocking wallet..."
+  raptoreum-cli -rpcconnect=${vHOST} -rpcport=${vPORT} -rpcuser=${vUSER} -rpcpassword=${vPASS} walletpassphrase "${vWALLETPASS}" 300
+  timestamp ; raptoreum-cli -rpcconnect=${vHOST} -rpcport=${vPORT} -rpcuser=${vUSER} -rpcpassword=${vPASS} sendtoaddress "${vTOADDR}" ${vBALANCE} "${vCOMMENT}" "" true false false
+else
+  timestamp ; echo "Balance is ${vBALANCE}. Keep accumulating..."
+fi
+
+#raptoreum-cli -rpcconnect=${vHOST} -rpcport=${vPORT} -rpcuser=${vUSER} -rpcpassword=${vPASS} help
