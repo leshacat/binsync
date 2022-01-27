@@ -19,9 +19,9 @@ fi
 vPWD=$(pwd)
 vPATH=$(echo $PATH)
 
-echo "[$vPWD] [$vDIRECTORY] [$vPATH]"
-
-exit
+echo "working directory   [$vPWD]"
+echo "binsync directory   [$vPATH]"
+echo "bin directory       [$vDIRECTORY]"
 
 # Make the directory where bins will reside
 mkdir -p ${vDIRECTORY}
