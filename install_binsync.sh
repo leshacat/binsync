@@ -13,6 +13,8 @@ else
   exit
 fi
 
+echo "user                [$vUSER]"
+echo "Host                [$vHOST]"
 echo "working directory   [$vPWD]"
 echo "binsync directory   [$vPATH]"
 echo "bin directory       [$vDIRECTORY]"
