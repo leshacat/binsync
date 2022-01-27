@@ -1,5 +1,5 @@
-# binsync<br />
-<br />
+# binsync
+
 #### Description
 Synchronize bin directory across multiple systems<br />
 <br />
