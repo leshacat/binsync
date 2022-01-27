@@ -6,4 +6,5 @@ export vHOST="192.168.20.110"
 export vDIRECTORY="/root/bin" # DO NOT put trailing /
 
 # Autofilled Variables (do not change)
+export vPWD=$(pwd)
 export vPATH=$(echo $PATH)

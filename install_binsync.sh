@@ -1,20 +1,28 @@
 #!/usr/bin/env bash
 
-echo ""
-echo "install binsync ${vDIRECTORY}"
-echo ""
+# Get current directory
+SOURCE=${BASH_SOURCE[0]}
+while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
+  SOURCE=$(readlink "$SOURCE")
+  [[ $SOURCE != /* ]] && SOURCE=$DIR/$SOURCE # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+vSOURCEDIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
 
-vPWD=$(pwd)
-if test -f "${vPWD}/.binsync.config"; then
-  source ${vPWD}/.binsync.config
+if test -f "${vSOURCEDIR}/.binsync.config"; then
+  source ${vSOURCEDIR}/.binsync.config
 else
-  echo "${vPWD}/.binsync.config does not exist, please read the README.md!"
+  echo "${vSOURCEDIR}/.binsync.config does not exist, please read the README.md!"
   echo ""
   exit
 fi
 
+echo ""
+echo "install binsync ${vDIRECTORY}"
+echo ""
 echo "user                [$vUSER]"
-echo "Host                [$vHOST]"
+echo "host                [$vHOST]"
+echo "source directory   [$vSOURCEDIR]"
 echo "working directory   [$vPWD]"
 echo "binsync directory   [$vPATH]"
 echo "bin directory       [$vDIRECTORY]"
