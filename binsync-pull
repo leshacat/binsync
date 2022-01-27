@@ -13,8 +13,4 @@ else
   exit
 fi
 
-echo ""
-echo "rsync ${vDIRECTORY} directory"
-echo ""
-
 rsync -a ${vUSER}@${vHOST}:${vDIRECTORY} ${vDIRECTORY}
