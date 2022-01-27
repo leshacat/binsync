@@ -1,16 +1,14 @@
 #!/usr/bin/env bash
 
 echo ""
-echo "binsync-push ${vDIRECTORY}"
+echo "install binsync ${vDIRECTORY}"
 echo ""
 
 PWD=$(pwd)
-if test -f "${PWD}/config.inc"; then
-  echo "Loading configuration (${PWD}/config.inc)"
-  echo ""
-  source ${PWD}/config.inc
+if test -f "${PWD}/.binsync.config"; then
+  source ${PWD}/.binsync.config
 else
-  echo "${PWD}/config.inc does not exist, please read the README.md!"
+  echo "${PWD}/.binsync.config does not exist, please read the README.md!"
   echo ""
   exit
 fi
