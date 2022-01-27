@@ -9,7 +9,7 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 vSOURCEDIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
 
-export vVER=$(cat ${vSOURCEDIR}/.version)
+export vVER=$(cat ${vSOURCEDIR}/.binsync.version)
 
 if test -f "${vSOURCEDIR}/.binsync.config"; then
   source ${vSOURCEDIR}/.binsync.config
