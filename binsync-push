@@ -31,4 +31,4 @@ echo ""
 rsync -a ${vDIRECTORY} ${vUSER}@${vHOST}:${vDIRECTORY}
 
 # Clear ENV vars for security
-source ${PWD}/.binsync.config.clear
+source ${vSOURCEDIR}/.binsync.config.clear

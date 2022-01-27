@@ -28,6 +28,10 @@ echo "binsync directory   [$vPATH]"
 echo "bin directory       [$vDIRECTORY]"
 echo ""
 
+echo "installing rsync"
+apt update
+apt install -y rsync
+
 # Make the directory where bins will reside
 mkdir -p ${vDIRECTORY}
 
