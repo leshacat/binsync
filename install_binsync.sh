@@ -4,15 +4,6 @@
 export vPWD=$(pwd)
 export vPATH=$(echo $PATH)
 
-# Get calling script's directory
-SOURCE=${BASH_SOURCE[0]}
-while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
-  DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
-  SOURCE=$(readlink "$SOURCE")
-  [[ $SOURCE != /* ]] && SOURCE=$DIR/$SOURCE # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
-done
-vSOURCEDIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
-
 export vVER=$(cat ${vPWD}/.binsync.version)
 
 if test -f "${vPWD}/.binsync.config"; then
@@ -28,7 +19,6 @@ echo "install binsync ${vVER} [${vDIRECTORY}]"
 echo ""
 echo "user                [$vUSER]"
 echo "host                [$vHOST]"
-echo "source directory    [$vSOURCEDIR]"
 echo "working directory   [$vPWD]"
 echo "binsync directory   [$vPATH]"
 echo "bin directory       [$vDIRECTORY]"
@@ -53,10 +43,12 @@ sed -i "s~THISISREPODIRPLACEHOLDERDONOTTOUCH~${vPWD}~" "${vPWD}/binsync-pull"
 sed -i "s~THISISREPODIRPLACEHOLDERDONOTTOUCH~${vPWD}~" "${vPWD}/binsync-push"
 
 # Copy the binsync scripts
-cp ${vSOURCEDIR}/binsync-* ${vDIRECTORY}
-chmod -R 700 ${vPWD}
+cp ${vPWD}/binsync-* ${vDIRECTORY}
 chmod -R 700 ${vDIRECTORY}
-#cp ${vSOURCEDIR}/.binsync.config ${vSOURCEDIR}/.binsync.config.clear ${vDIRECTORY}
+chmod -R 700 ${vPWD}
+chmod +x ${vPWD}/binsync-*
+
+#cp ${vPWD}/.binsync.config ${vPWD}/.binsync.config.clear ${vDIRECTORY}
 
 # Check if vDIRECTORY is added to $PATH
 if [[ "${vPATH}" == *"${vDIRECTORY}"* ]]; then
@@ -74,4 +66,4 @@ echo "binsync installation is complete!"
 echo ""
 
 # Clear ENV vars for security
-source ${vSOURCEDIR}/.binsync.config.clear
+source ${vPWD}/.binsync.config.clear
