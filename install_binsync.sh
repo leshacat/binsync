@@ -6,6 +6,8 @@ echo ""
 
 PWD=$(pwd)
 if test -f "${PWD}/config.inc"; then
+  echo "Loading configuration (${PWD}/config.inc)"
+  echo ""
   source ${PWD}/config.inc
 else
   echo "${PWD}/config.inc does not exist, please read the README.md!"
@@ -16,6 +18,10 @@ fi
 # Get / fill variables
 vPWD=$(pwd)
 vPATH=$(echo $PATH)
+
+echo "[$vPWD] [$vDIRECTORY] [$vPATH]"
+
+exit
 
 # Make the directory where bins will reside
 mkdir -p ${vDIRECTORY}
