@@ -57,6 +57,9 @@ Make sure you keep both the bin folder and the repository. To update do the foll
 2. Pull the updates from server `git pull`
 3. Execute installer `./install_binsync.sh`
 
+#### Coming features
+- Can't think of any at the moment, but please create GitHub or Gogs issue ticket if you have any suggestions.
+
 #### Donations:
 **XMR:** 84wwa7EKo8uasZAHijHKtBTuBaMPuNjCJgnfGJrsLFo4aZcfrzGvUX33sSeFNdno8fPiTDGnz4h1bCvsdFQYWRuR2619FzS <br />
 **ETH(ERC-20):** 0xc89eEa9b5C0cfa7f583dc1A6405a7d5730ADB603 <br />
