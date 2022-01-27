@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export vREPODIR="/root/local-repos/binsync"
+export vREPODIR="THISISREPODIRPLACEHOLDERDONOTTOUCH"
 
 # Autofilled Variables (do not change)
 export vPWD=$(pwd)
