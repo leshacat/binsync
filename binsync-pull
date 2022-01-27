@@ -13,6 +13,11 @@ else
   exit
 fi
 
+echo "working directory   [$vPWD]"
+echo "binsync directory   [$vPATH]"
+echo "bin directory       [$vDIRECTORY]"
+echo ""
+
 rsync -a ${vUSER}@${vHOST}:${vDIRECTORY} ${vDIRECTORY}
 
 # Clear ENV vars for security
