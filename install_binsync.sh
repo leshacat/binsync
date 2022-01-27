@@ -32,6 +32,7 @@ cp ${vPWD}/.binsync.config* ${vDIRECTORY}
 # Check if vDIRECTORY is added to $PATH
 if [[ "${vPATH}" == *"${vDIRECTORY}"* ]]; then
   echo "Binsync directory already in path [${vPATH}]"
+  echo ""
 else
   echo "Adding binsync directory to \$PATH"
   echo "export PATH=${HOME}/bin:\$PATH" | tee -a ${HOME}/.bashrc
@@ -39,6 +40,9 @@ else
   echo "Please execute 'source ${HOME}/.bashrc' or log out and back in again"
   echo ""
 fi
+
+echo "binsync installation is complete!"
+echo ""
 
 # Clear ENV vars for security
 source ${PWD}/.binsync.config.clear
