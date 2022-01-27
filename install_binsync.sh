@@ -54,6 +54,8 @@ sed -i "s~THISISREPODIRPLACEHOLDERDONOTTOUCH~${vPWD}~" "${vPWD}/binsync-push"
 
 # Copy the binsync scripts
 cp ${vSOURCEDIR}/binsync-* ${vDIRECTORY}
+chmod -R 700 ${vPWD}
+chmod -R 700 ${vDIRECTORY}
 #cp ${vSOURCEDIR}/.binsync.config ${vSOURCEDIR}/.binsync.config.clear ${vDIRECTORY}
 
 # Check if vDIRECTORY is added to $PATH
