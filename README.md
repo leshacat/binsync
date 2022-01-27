@@ -54,9 +54,12 @@ Synchronize bin directory across multiple systems with rsync
 #### Updating
 Make sure you keep both the bin folder and the repository. To update do the following:
 1. Change to repository directory
-2. Fetch the updates from server `git fetch --all`
-3. Hard reset git to overwrite local changes to files `git reset --hard origin/master`
-4. Execute installer `./install_binsync.sh`
+2. One line: `git fetch --all ; git reset --hard origin/master ; ./install_binsync.sh ;`
+
+Expanded:
+1. Fetch the updates from server `git fetch --all`
+2. Hard reset git to overwrite local changes to files `git reset --hard origin/master`
+3. Execute installer `./install_binsync.sh`
 
 #### Coming features
 - Can't think of any at the moment, but please create GitHub or Gogs issue ticket if you have any suggestions.
