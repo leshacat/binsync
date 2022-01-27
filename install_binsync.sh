@@ -32,8 +32,8 @@ echo ""
 mkdir -p ${vDIRECTORY}
 
 # Copy the binsync scripts
-cp ${vPWD}/binsync-* ${vDIRECTORY}
-cp ${vPWD}/.binsync.config ${vPWD}/.binsync.config.clear ${vDIRECTORY}
+cp ${vSOURCEDIR}/binsync-* ${vDIRECTORY}
+cp ${vSOURCEDIR}/.binsync.config ${vSOURCEDIR}/.binsync.config.clear ${vDIRECTORY}
 
 # Check if vDIRECTORY is added to $PATH
 if [[ "${vPATH}" == *"${vDIRECTORY}"* ]]; then
@@ -51,4 +51,4 @@ echo "binsync installation is complete!"
 echo ""
 
 # Clear ENV vars for security
-source ${vPWD}/.binsync.config.clear
+source ${vSOURCEDIR}/.binsync.config.clear
