@@ -31,7 +31,7 @@ mkdir -p ${vDIRECTORY}
 cp ${vPWD}/binsync-* ${vDIRECTORY}
 
 # Check if vDIRECTORY is added to $PATH
-if [[ "${vDIRECTORY}" == *"${vPATH}"* ]]; then
+if [[ "${vPATH}" == *"${vDIRECTORY}"* ]]; then
   echo "Binsync directory already in path [${vPATH}]"
 else
   echo "Adding binsync directory to \$PATH"
