@@ -48,7 +48,8 @@ fi
 mkdir -p ${vDIRECTORY}
 
 # Change the repo dir in scripts (THISISREPODIRPLACEHOLDERDONOTTOUCH)
-sed -i "s/THISISREPODIRPLACEHOLDERDONOTTOUCH/test/" "${vPWD}/binsync-*"
+sed -i "s/THISISREPODIRPLACEHOLDERDONOTTOUCH/test/" "${vPWD}/binsync-pull"
+sed -i "s/THISISREPODIRPLACEHOLDERDONOTTOUCH/test/" "${vPWD}/binsync-push"
 
 # Copy the binsync scripts
 cp ${vSOURCEDIR}/binsync-* ${vDIRECTORY}
