@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-# Get current directory
+# Autofilled Variables (do not change)
+export vPWD=$(pwd)
+export vPATH=$(echo $PATH)
+
+# Get calling script's directory
 SOURCE=${BASH_SOURCE[0]}
 while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
   DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
@@ -9,12 +13,12 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 vSOURCEDIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
 
-export vVER=$(cat ${vSOURCEDIR}/.binsync.version)
+export vVER=$(cat ${vPWD}/.binsync.version)
 
-if test -f "${vSOURCEDIR}/.binsync.config"; then
-  source ${vSOURCEDIR}/.binsync.config
+if test -f "${vPWD}/.binsync.config"; then
+  source ${vPWD}/.binsync.config
 else
-  echo "${vSOURCEDIR}/.binsync.config does not exist, please read the README.md!"
+  echo "${vPWD}/.binsync.config does not exist, please read the README.md!"
   echo ""
   exit
 fi
@@ -43,9 +47,12 @@ fi
 # Make the directory where bins will reside
 mkdir -p ${vDIRECTORY}
 
+# Change the repo dir in scripts (THISISREPODIRPLACEHOLDERDONOTTOUCH)
+sed -i "s/THISISREPODIRPLACEHOLDERDONOTTOUCH/${vPWD}/" ${vPWD}/binsync-*
+
 # Copy the binsync scripts
 cp ${vSOURCEDIR}/binsync-* ${vDIRECTORY}
-cp ${vSOURCEDIR}/.binsync.config ${vSOURCEDIR}/.binsync.config.clear ${vDIRECTORY}
+#cp ${vSOURCEDIR}/.binsync.config ${vSOURCEDIR}/.binsync.config.clear ${vDIRECTORY}
 
 # Check if vDIRECTORY is added to $PATH
 if [[ "${vPATH}" == *"${vDIRECTORY}"* ]]; then
