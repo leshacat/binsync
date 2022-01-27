@@ -29,8 +29,11 @@ echo "bin directory       [$vDIRECTORY]"
 echo ""
 
 echo "installing rsync"
+echo ""
 apt update
+echo ""
 apt install -y rsync
+echo ""
 
 # Make the directory where bins will reside
 mkdir -p ${vDIRECTORY}
