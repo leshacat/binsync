@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-vUSER="root"
-vHOST="192.168.20.110"
+export vUSER=""
+export vHOST=""
 
-vDIRECTORY="/root/bin"
+export vDIRECTORY=""
+
+# Autofilled Variables (do not change)
+export vPWD=""
+export vPATH=""

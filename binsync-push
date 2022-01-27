@@ -4,11 +4,11 @@ echo ""
 echo "binsync-push ${vDIRECTORY}"
 echo ""
 
-PWD=$(pwd)
-if test -f "${PWD}/.binsync.config"; then
-  source ${PWD}/.binsync.config
+vPWD=$(pwd)
+if test -f "${vPWD}/.binsync.config"; then
+  source ${vPWD}/.binsync.config
 else
-  echo "${PWD}/.binsync.config does not exist, please read the README.md!"
+  echo "${vPWD}/.binsync.config does not exist, please read the README.md!"
   echo ""
   exit
 fi

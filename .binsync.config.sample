@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-vUSER="root"
-vHOST="192.168.20.110"
+export vUSER="root"
+export vHOST="192.168.20.110"
 
-vDIRECTORY="/root/bin" # DO NOT put trailing /
+export vDIRECTORY="/root/bin" # DO NOT put trailing /
+
+# Autofilled Variables (do not change)
+export vPATH=$(echo $PATH)

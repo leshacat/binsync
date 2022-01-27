@@ -4,18 +4,14 @@ echo ""
 echo "install binsync ${vDIRECTORY}"
 echo ""
 
-PWD=$(pwd)
-if test -f "${PWD}/.binsync.config"; then
-  source ${PWD}/.binsync.config
+vPWD=$(pwd)
+if test -f "${vPWD}/.binsync.config"; then
+  source ${vPWD}/.binsync.config
 else
-  echo "${PWD}/.binsync.config does not exist, please read the README.md!"
+  echo "${vPWD}/.binsync.config does not exist, please read the README.md!"
   echo ""
   exit
 fi
-
-# Get / fill variables
-vPWD=$(pwd)
-vPATH=$(echo $PATH)
 
 echo "working directory   [$vPWD]"
 echo "binsync directory   [$vPATH]"
@@ -45,4 +41,4 @@ echo "binsync installation is complete!"
 echo ""
 
 # Clear ENV vars for security
-source ${PWD}/.binsync.config.clear
+source ${vPWD}/.binsync.config.clear
