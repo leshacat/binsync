@@ -29,6 +29,7 @@ mkdir -p ${vDIRECTORY}
 
 # Copy the binsync scripts
 cp ${vPWD}/binsync-* ${vDIRECTORY}
+cp ${vPWD}/.binsync.config* ${vDIRECTORY}
 
 # Check if vDIRECTORY is added to $PATH
 if [[ "${vPATH}" == *"${vDIRECTORY}"* ]]; then
