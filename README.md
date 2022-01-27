@@ -47,6 +47,7 @@ Synchronize bin directory across multiple systems
 16. Save & Exit
 
 
+
 #### Donations:
 **XMR:** 84wwa7EKo8uasZAHijHKtBTuBaMPuNjCJgnfGJrsLFo4aZcfrzGvUX33sSeFNdno8fPiTDGnz4h1bCvsdFQYWRuR2619FzS <br />
 **ETH(ERC-20):** 0xc89eEa9b5C0cfa7f583dc1A6405a7d5730ADB603 <br />
@@ -54,4 +55,4 @@ Synchronize bin directory across multiple systems
 **RTM:** RDg5KstHYvxip77EiGhPKYNL3TZQr6456T <br />
 **AVN:** R9zSPpKjo6tCutMT5FyyGNr2vRaAssEtrm <br />
 **PHL:** F7XaUosKYEXPP62o31DdpDoADo3VcxoFP4 <br />
-**PEXA:** XBghzGLdeUzspUcJpeggPFLs3mAyTRHpPH <br /> 
+**PEXA:** XBghzGLdeUzspUcJpeggPFLs3mAyTRHpPH <br />
