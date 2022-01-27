@@ -28,7 +28,7 @@ echo "binsync directory   [$vPATH]"
 echo "bin directory       [$vDIRECTORY]"
 echo ""
 
-rsync -u -d -p -E -z -v --exclude=.* ${vDIRECTORY}/* ${vUSER}@${vHOST}:${vDIRECTORY} --delete-before --force
+rsync -u -d -p -E -z -v --exclude=.* ${vDIRECTORY}/* ${vUSER}@${vHOST}:${vDIRECTORY} --delete --delete-before --force
 
 # Clear ENV vars for security
 source ${vSOURCEDIR}/.binsync.config.clear
