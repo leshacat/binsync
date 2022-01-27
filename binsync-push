@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+vUSER="root"
+vHOST="192.168.0.205"
+
+vDIRECTORY="/root/bin/"
+
+echo ""
+echo "rsync ${vDIRECTORY} directory"
+echo ""
+
+rsync -a ${vDIRECTORY} ${vUSER}@${vHOST}:${vDIRECTORY}
