@@ -28,12 +28,15 @@ echo "binsync directory   [$vPATH]"
 echo "bin directory       [$vDIRECTORY]"
 echo ""
 
-echo "installing rsync"
-echo ""
-apt update
-echo ""
-apt install -y rsync
-echo ""
+vRSYNC=$(dpkg-query -l rsync)
+if [[ "no packages found matching" == *"${vRSYNC}"* ]]; then
+  echo "installing rsync"
+  echo ""
+  apt update
+  echo ""
+  apt install -y rsync
+  echo ""
+fi
 
 # Make the directory where bins will reside
 mkdir -p ${vDIRECTORY}
