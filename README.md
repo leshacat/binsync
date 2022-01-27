@@ -1,7 +1,7 @@
 # binsync
 
 #### Description
-Synchronize bin directory across multiple systems
+Synchronize bin directory across multiple systems with rsync
 
 #### Notes
 - It is important the instructions are completed in order!
@@ -25,27 +25,36 @@ Synchronize bin directory across multiple systems
 #### On the host machine
 1. Login as non-root user
 2. `su` and enter root password if setting up root as the host
-3. Make bin directory `mkdir -p ${HOME}/bin`
-4. `echo "export PATH=${HOME}/bin:\$PATH" | tee -a ${HOME}/.bashrc`
+3. Change to directory you wish to install repository
+4. Clone repo `git clone https://gogs.easyx.cc/EasyX-Community/binsync.git`
+5. Change to repository directory `cd binsync`
+6. Execute installer `./install_binsync.sh`
+7. Copy config `cp config.inc.sample config.inc`
+8. Edit config `nano config.inc`
+9. Enter in your User, Host, and Directory
+10. Note: Do not set up cronjob on the host machine! The clients do the push/pull!
 
 #### On the client(s) machines
 1. Login as non-root user
 2. `su` and enter root password if setting up root as the client
-3. Make bin directory `mkdir -p ${HOME}/bin`
-4. `echo "export PATH=${HOME}/bin:\$PATH" | tee -a ${HOME}/.bashrc`
-5. Change to directory you wish to install repository
-6. Clone repo `git clone https://gogs.easyx.cc/EasyX-Community/binsync.git`
-7. Change directory `cd binsync`
-8. Chmod files `chmod +x binsync binsync-manual install_binsync.sh`
-9. Execute installer `./install_binsync.sh`
-10. Copy config `cp config.inc.sample config.inc`
-11. Edit config `nano config.inc`
-12. Enter in your User, Host, and Directory
-13. Run manually `binsync-manual`
-14. Add cronjob `crontab -e`
-15. Add in: `*/5 * * * *             ${HOME}/bin/rsync-bin-push ; ${HOME}/bin/rsync-bin-pull ;`
-16. Save & Exit<br />
+3. Change to directory you wish to install repository
+4. Clone repo `git clone https://gogs.easyx.cc/EasyX-Community/binsync.git`
+5. Change to repository directory `cd binsync`
+6. Execute installer `./install_binsync.sh`
+7. Copy config `cp config.inc.sample config.inc`
+8. Edit config `nano config.inc`
+9. Enter in your User, Host, and Directory
+10. Run manually `binsync-manual`
+11. Add cronjob `crontab -e`
+12. Add in: `*/5 * * * *             ${HOME}/bin/binsync-push ; ${HOME}/bin/binsync-pull ;`
+13. Save & Exit<br />
 <br />
+
+#### Updating
+Make sure you keep both the bin folder and the repository. To update do the following:
+1. Change to repository directory
+2. Pull the updates from server `git pull`
+3. Execute installer `./install_binsync.sh`
 
 #### Donations:
 **XMR:** 84wwa7EKo8uasZAHijHKtBTuBaMPuNjCJgnfGJrsLFo4aZcfrzGvUX33sSeFNdno8fPiTDGnz4h1bCvsdFQYWRuR2619FzS <br />
