@@ -18,11 +18,11 @@ else
 fi
 
 echo ""
-echo "install binsync ${vDIRECTORY}"
+echo "binsync-push ${vDIRECTORY}"
 echo ""
 echo "user                [$vUSER]"
 echo "host                [$vHOST]"
-echo "source directory   [$vSOURCEDIR]"
+echo "source directory    [$vSOURCEDIR]"
 echo "working directory   [$vPWD]"
 echo "binsync directory   [$vPATH]"
 echo "bin directory       [$vDIRECTORY]"
