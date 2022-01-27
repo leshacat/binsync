@@ -2,7 +2,7 @@
 
 Synchronize bin directory across multiple systems
 
-**Note:** It is important the instructions are done in order!<br />
+**Note:** It is important the instructions are completed in order!<br />
 **Note:** You can only have one host machine under one root/user account<br />
 **Note:** You can have as many client machines as you like, under any root/user account<br />
 
