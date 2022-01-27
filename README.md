@@ -12,6 +12,7 @@ Synchronize bin directory across multiple systems with rsync
 1. Login as non-root user
 2. `su` and enter root password if setting up root
 3. Generate the key `ssh-keygen` (leave all options including password empty and press enter)
+4. chmod 700 /root/.ssh/id_rsa
 4. Print the key `cat ${HOME}/.ssh/id_rsa.pub`
 5. Copy the line printed out into a notepad (yes it is one giant line)
 
@@ -28,9 +29,9 @@ Synchronize bin directory across multiple systems with rsync
 3. Change to directory you wish to install repository
 4. Clone repo `git clone https://gogs.easyx.cc/EasyX-Community/binsync.git`
 5. Change to repository directory `cd binsync`
-6. Execute installer `./install_binsync.sh`
-7. Copy config `cp config.inc.sample config.inc`
-8. Edit config `nano config.inc`
+6. Copy config `cp config.inc.sample config.inc`
+7. Edit config `nano config.inc`
+8. Execute installer `./install_binsync.sh`
 9. Enter in your User, Host, and Directory
 10. Note: Do not set up cronjob on the host machine! The clients do the push/pull!
 
@@ -40,9 +41,9 @@ Synchronize bin directory across multiple systems with rsync
 3. Change to directory you wish to install repository
 4. Clone repo `git clone https://gogs.easyx.cc/EasyX-Community/binsync.git`
 5. Change to repository directory `cd binsync`
-6. Execute installer `./install_binsync.sh`
-7. Copy config `cp config.inc.sample config.inc`
-8. Edit config `nano config.inc`
+6. Copy config `cp config.inc.sample config.inc`
+7. Edit config `nano config.inc`
+8. Execute installer `./install_binsync.sh`
 9. Enter in your User, Host, and Directory
 10. Run manually `binsync-manual`
 11. Add cronjob `crontab -e`
