@@ -1,7 +1,7 @@
 # binsync v1.0.0
 
 #### Description
-Synchronize bin directory across multiple systems with rsync
+Synchronize bin directory across multiple systems with rsync.
 
 #### Notes
 - It is important the instructions are completed in order!
@@ -48,13 +48,16 @@ Synchronize bin directory across multiple systems with rsync
 10. Run manually `binsync-manual`
 11. Add cronjob `crontab -e`
 12. Add in: `*/5 * * * *             $HOME/bin/binsync-push ; $HOME/bin/binsync-pull ;`
-12. Add in: `@weekly                 $HOME/bin/binsync-update ;`
 13. Save & Exit<br />
 <br />
 
 #### Updating (manual)
 Make sure you keep both the bin folder and the repository. To update do the following:
 1. Run update script `binsync-update`
+
+#### Updating (automatic)
+1. Open cronjob editor `crontab -e`
+2. Add in: `@weekly                 $HOME/bin/binsync-update ;`
 
 #### Coming features
 - Can't think of any at the moment, but please create GitHub or Gogs issue ticket if you have any suggestions.
