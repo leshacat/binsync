@@ -16,4 +16,4 @@ fi
 rsync -a ${vDIRECTORY} ${vUSER}@${vHOST}:${vDIRECTORY}
 
 # Clear ENV vars for security
-source ${PWD}/config.clear.inc
+source ${PWD}/.binsync.clear.config

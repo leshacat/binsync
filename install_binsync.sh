@@ -41,4 +41,4 @@ else
 fi
 
 # Clear ENV vars for security
-source ${PWD}/config.clear.inc
+source ${PWD}/.binsync.clear.config
