@@ -22,6 +22,7 @@ vPATH=$(echo $PATH)
 echo "working directory   [$vPWD]"
 echo "binsync directory   [$vPATH]"
 echo "bin directory       [$vDIRECTORY]"
+echo ""
 
 # Make the directory where bins will reside
 mkdir -p ${vDIRECTORY}
@@ -30,8 +31,9 @@ mkdir -p ${vDIRECTORY}
 cp ${vPWD}/binsync-* ${vDIRECTORY}
 
 # Check if vDIRECTORY is added to $PATH
-if [[ "${vDIRECTORY}" != *"${vPATH}"* ]]; then
-  echo ""
+if [[ "${vDIRECTORY}" == *"${vPATH}"* ]]; then
+  echo "Binsync directory already in path [${vPATH}]"
+else
   echo "Adding binsync directory to \$PATH"
   echo "export PATH=${HOME}/bin:\$PATH" | tee -a ${HOME}/.bashrc
   echo ""
