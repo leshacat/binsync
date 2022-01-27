@@ -47,19 +47,14 @@ Synchronize bin directory across multiple systems with rsync
 9. Enter in your User, Host, and Directory
 10. Run manually `binsync-manual`
 11. Add cronjob `crontab -e`
-12. Add in: `*/5 * * * *             ${HOME}/bin/binsync-push ; ${HOME}/bin/binsync-pull ;`
+12. Add in: `*/5 * * * *             $HOME/bin/binsync-push ; $HOME/bin/binsync-pull ;`
+12. Add in: `@weekly                 $HOME/bin/binsync-update ;`
 13. Save & Exit<br />
 <br />
 
-#### Updating
+#### Updating (manual)
 Make sure you keep both the bin folder and the repository. To update do the following:
-1. Change to repository directory
-2. One line: `git fetch --all ; git reset --hard origin/master ; ./install_binsync.sh ;`
-
-Expanded:
-1. Fetch the updates from server `git fetch --all`
-2. Hard reset git to overwrite local changes to files `git reset --hard origin/master`
-3. Execute installer `./install_binsync.sh`
+1. Run update script `binsync-update`
 
 #### Coming features
 - Can't think of any at the moment, but please create GitHub or Gogs issue ticket if you have any suggestions.
