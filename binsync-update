@@ -15,12 +15,12 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 vSOURCEDIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
 
-export vVER=$(cat ${vPWD}/.binsync.version)
+export vVER=$(cat ${vREPODIR}/.binsync.version)
 
-if test -f "${vPWD}/.binsync.config"; then
-  source ${vPWD}/.binsync.config
+if test -f "${vREPODIR}/.binsync.config"; then
+  source ${vREPODIR}/.binsync.config
 else
-  echo "${vPWD}/.binsync.config does not exist, please read the README.md!"
+  echo "${vREPODIR}/.binsync.config does not exist, please read the README.md!"
   echo ""
   exit
 fi
@@ -40,4 +40,4 @@ cd ${vREPODIR}
 git fetch --all ; git reset --hard origin/master ; ./install_binsync.sh ;
 
 # Clear ENV vars for security
-source ${vSOURCEDIR}/.binsync.config.clear
+source ${vREPODIR}/.binsync.config.clear
