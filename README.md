@@ -1,12 +1,12 @@
 # binsync
 
+#### Description
+Synchronize bin directory across multiple systems
+
 #### Notes
 - It is important the instructions are completed in order!<br />
 - You can only have one host machine under one root/user account<br />
 - You can have as many client machines as you like, under any root/user account<br />
-
-#### Description
-Synchronize bin directory across multiple systems
 
 #### Gather client SSH keys
 1. Login as non-root user
