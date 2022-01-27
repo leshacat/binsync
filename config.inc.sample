@@ -3,4 +3,4 @@
 vUSER="root"
 vHOST="192.168.20.110"
 
-vDIRECTORY="/root/bin/"
+vDIRECTORY="/root/bin" # DO NOT put trailing /
