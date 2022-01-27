@@ -9,6 +9,8 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 vSOURCEDIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
 
+export vVER=$(cat ${vSOURCEDIR}/.version)
+
 if test -f "${vSOURCEDIR}/.binsync.config"; then
   source ${vSOURCEDIR}/.binsync.config
 else
@@ -18,7 +20,7 @@ else
 fi
 
 echo ""
-echo "install binsync ${vDIRECTORY}"
+echo "install binsync ${vVER} [${vDIRECTORY}]"
 echo ""
 echo "user                [$vUSER]"
 echo "host                [$vHOST]"

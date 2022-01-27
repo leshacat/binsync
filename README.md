@@ -1,4 +1,4 @@
-# binsync
+# binsync v1.0.0
 
 #### Description
 Synchronize bin directory across multiple systems with rsync
