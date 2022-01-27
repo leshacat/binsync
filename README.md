@@ -48,8 +48,7 @@ Synchronize bin directory across multiple systems with rsync.
 10. Run manually `binsync-manual`
 11. Add cronjob `crontab -e`
 12. Add in: `*/5 * * * *             $HOME/bin/binsync-push ; $HOME/bin/binsync-pull ;`
-13. Save & Exit<br />
-<br />
+13. Save & Exit
 
 #### Updating (manual)
 Make sure you keep both the bin folder and the repository. To update do the following:
