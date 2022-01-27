@@ -1,33 +1,33 @@
-# binsync
-
+# binsync<br />
+<br />
 #### Description
-Synchronize bin directory across multiple systems
-
+Synchronize bin directory across multiple systems<br />
+<br />
 #### Notes
 - It is important the instructions are completed in order!<br />
 - You can only have one host machine under one root/user account<br />
-- You can have as many client machines as you like, under any root/user account<br />
-
+- You can have as many client machines as you like, under any root/user account<br /><br />
+<br />
 #### Gather client SSH keys
 1. Login as non-root user
 2. `su` and enter root password if setting up root
 3. Generate the key `ssh-keygen` (leave all options including password empty and press enter)
 4. Print the key `cat ${HOME}/.ssh/id_rsa.pub`
-5. Copy the line printed out into a notepad (yes it is one giant line)
-
+5. Copy the line printed out into a notepad (yes it is one giant line)<br />
+<br />
 #### Install keys on host machine
 1. Login as non-root user
 2. `su` and enter root password if setting up root
 3. `nano ${HOME}/.ssh/authorized_keys`
 4. Copy the lines from notepad and paste into the file
-5. Save & Exit
-
+5. Save & Exit<br />
+<br />
 #### On the host machine
 1. Login as non-root user
 2. `su` and enter root password if setting up root as the host
 3. Make bin directory `mkdir -p ${HOME}/bin`
-4. `echo "export PATH=${HOME}/bin:\$PATH" | tee -a ${HOME}/.bashrc`
-
+4. `echo "export PATH=${HOME}/bin:\$PATH" | tee -a ${HOME}/.bashrc`<br />
+<br />
 #### On the client(s) machines
 1. Login as non-root user
 2. `su` and enter root password if setting up root as the client
@@ -44,10 +44,9 @@ Synchronize bin directory across multiple systems
 13. Run manually `binsync-manual`
 14. Add cronjob `crontab -e`
 15. Add in: `*/5 * * * *             ${HOME}/bin/rsync-bin-push ; ${HOME}/bin/rsync-bin-pull ;`
-16. Save & Exit
-
-
-
+16. Save & Exit<br />
+<br />
+<br />
 #### Donations:
 **XMR:** 84wwa7EKo8uasZAHijHKtBTuBaMPuNjCJgnfGJrsLFo4aZcfrzGvUX33sSeFNdno8fPiTDGnz4h1bCvsdFQYWRuR2619FzS <br />
 **ETH(ERC-20):** 0xc89eEa9b5C0cfa7f583dc1A6405a7d5730ADB603 <br />
