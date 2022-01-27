@@ -1,9 +1,17 @@
 #!/usr/bin/env bash
 
-vUSER="root"
-vHOST="192.168.0.205"
+echo ""
+echo "binsync-pull ${vDIRECTORY}"
+echo ""
 
-vDIRECTORY="/root/bin/"
+PWD=$(pwd)
+if test -f "${PWD}/config.inc"; then
+  source ${PWD}/config.inc
+else
+  echo "${PWD}/config.inc does not exist, please read the README.md!"
+  echo ""
+  exit
+fi
 
 echo ""
 echo "rsync ${vDIRECTORY} directory"
